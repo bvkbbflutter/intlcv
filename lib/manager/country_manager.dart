@@ -188,4 +188,18 @@ class CountryManager {
       orElse: () => countries.values.first, // fallback (optional)
     );
   }
+
+  String getFlagByCountryCode(String? code) {
+    if (code == null || code.isEmpty) return '';
+
+    final country = getCountryByCode(code);
+    return country?.flag ?? '';
+  }
+
+  String getFlagByDialCode(String? dialCode) {
+    if (dialCode == null || dialCode.isEmpty || dialCode == "+") return '';
+
+    final country = getCountryByDialCode(dialCode);
+    return country?.flag ?? '';
+  }
 }
