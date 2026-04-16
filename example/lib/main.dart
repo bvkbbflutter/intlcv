@@ -53,7 +53,7 @@ class _PhoneFieldDemoState extends State<PhoneFieldDemo> {
   PhoneNumber? _phoneNumber;
   String? _validationError;
 
-  final _phoneController = TextEditingController();
+  final _phoneController = TextEditingController(text: "9090909090");
 
   @override
   Widget build(BuildContext context) {
@@ -290,6 +290,10 @@ class _PhoneFieldDemoState extends State<PhoneFieldDemo> {
                 child: Column(
                   children: [
                     CustomPhoneField(
+                      controller: _phoneController,
+                      initialDialCode: '+91', // UK
+                      initialCountryCode:
+                          'US', // This will be ignored because dial code is provided
                       config: const PhoneFieldConfig(
                         decoration: InputDecoration(
                           labelText: 'Phone Number *',
@@ -306,7 +310,8 @@ class _PhoneFieldDemoState extends State<PhoneFieldDemo> {
                       onChanged: (phoneNumber) {
                         // Auto-validate as user types
                         // setState(() {
-                        //   _phoneNumber = phoneNumber;
+                        _phoneController.text = phoneNumber.number;
+                        _phoneNumber = phoneNumber;
                         //   _validationError = PhoneField.manager
                         //       .validatePhoneNumber(
                         //         phoneNumber.number,
