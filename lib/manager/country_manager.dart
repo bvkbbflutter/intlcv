@@ -176,4 +176,16 @@ class CountryManager {
       orElse: () => _getEffectiveCountries().values.first,
     );
   }
+
+  /// Get country by country code (ISO)
+  Country? getCountryByCode(String code) {
+    final upperCode = code.toUpperCase();
+
+    final countries = _getEffectiveCountries();
+
+    return countries.values.firstWhere(
+      (country) => country.code.toUpperCase() == upperCode,
+      orElse: () => countries.values.first, // fallback (optional)
+    );
+  }
 }
