@@ -54,7 +54,7 @@ class CustomPhoneField extends StatefulWidget {
   final String? initialCountryCode;
 
   const CustomPhoneField({
-    Key? key,
+    super.key,
     this.config = const PhoneFieldConfig(),
     this.onChanged,
     this.validator,
@@ -64,7 +64,7 @@ class CustomPhoneField extends StatefulWidget {
     this.onSubmit,
     this.initialDialCode,
     this.initialCountryCode,
-  }) : super(key: key);
+  });
 
   @override
   State<CustomPhoneField> createState() => _CustomPhoneFieldState();
@@ -120,9 +120,7 @@ class _CustomPhoneFieldState extends State<CustomPhoneField> {
     }
 
     // Priority 4: Use config default country code
-    if (foundCountry == null) {
-      foundCountry = _manager.getCountry(widget.config.defaultCountryCode);
-    }
+    foundCountry ??= _manager.getCountry(widget.config.defaultCountryCode);
 
     // Priority 5: Fallback to first country
     _selectedCountry = foundCountry ?? _manager.countries.values.first;
@@ -381,11 +379,10 @@ class _CountryPickerDialog extends StatefulWidget {
   final CountryManager manager;
 
   const _CountryPickerDialog({
-    Key? key,
     required this.config,
     required this.selectedCountry,
     required this.manager,
-  }) : super(key: key);
+  });
 
   @override
   State<_CountryPickerDialog> createState() => _CountryPickerDialogState();

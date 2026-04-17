@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../models/country.dart';
 
 /// Configuration for CustomPhoneField
 class PhoneFieldConfig {

@@ -1,4 +1,4 @@
-library phone_field;
+library;
 
 // Models
 export 'models/country.dart';
@@ -24,7 +24,6 @@ export 'config/phone_field_config.dart';
 
 // Widgets
 export 'widgets/custom_phone_field.dart';
-export 'widgets/costom_form_field_ext.dart';
 
 import 'datasource/country_data_source.dart';
 import 'manager/country_manager.dart';
