@@ -1,18 +1,26 @@
 name: intlcv
-description: "A new Flutter plugin project."
+description: A customizable international phone field with country picker, validation, and flag support.
 version: 1.0.4
-homepage:
+
+homepage: https://github.com/bvkbbflutter/intlcv
+repository: https://github.com/bvkbbflutter/intlcv
+
+topics:
+  - flutter
+  - phone-input
+  - intl
+  - form-field
 
 environment:
-  sdk: ^3.10.1
-  flutter: '>=3.3.0'
-
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.3.0"
 dependencies:
   flutter:
     sdk: flutter
   http: ^1.6.0
   plugin_platform_interface: ^2.0.2
   shared_preferences: ^2.5.5
+
 
 dev_dependencies:
   flutter_test:
